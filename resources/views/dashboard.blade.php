@@ -1,30 +1,18 @@
 @extends('adminlte::page')
 
 @section('htmlheader_title')
-	Change Title here!
+    Change Title here!
 @endsection
 
 
 @section('main-content')
-	<div class="container-fluid spark-screen">
+    <div class="container-fluid spark-screen">
         <div class="row">
 
             <dashboard-small-box name="tasks"></dashboard-small-box>
 
+            <dashboard-small-box name="threads" color="bg-green"></dashboard-small-box>
 
-            <div class="col-lg-3 col-xs-6">
-                <div class="small-box bg-green">
-                    <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                        <p>Threads</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
             <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
@@ -56,6 +44,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -199,10 +188,10 @@
         </div>
         <!-- /.row -->
 
-		<div class="row">
-			<div class="col-md-9 col-md-offset-1">
+        <div class="row">
+            <div class="col-md-9 col-md-offset-1">
 
-				<div class="box box-success box-solid">
+                <div class="box box-success box-solid">
                     <div class="box-header with-border">
                         <h3 class="box-title">Example box</h3>
                         <div class="box-tools pull-right">
@@ -215,20 +204,50 @@
                     <div class="box-body">
 
                         <dashboard-increase-button name="task"></dashboard-increase-button>
+                        <dashboard-increase-button name="thread"></dashboard-increase-button>
 
                     </div>
                     <!-- /.box-body -->
                 </div>
 
-			</div>
-		</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <graph
+                        :labels="{{ $labels1 }}"
+                        :values="{{ $values1 }}"
+                        color="red"
+                ></graph>
+            </div>
+            <div class="col-lg-6">
+                <graph
+                        :labels="{{ $labels2 }}"
+                        :values="{{ $values2 }}"
+                ></graph>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <graph url="/dashboard/graphs/1"></graph>
+            </div>
+            <div class="col-lg-9">
+                <graph
+                        :labels="['dsaassd', 'February', 'March', 'April', 'May', 'June', 'July']"
+                        :values="[67,42,445,23,23,76]"
+                ></graph>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">
-                <graph></graph>
+                <activity-feed></activity-feed>
             </div>
         </div>
-         <div class="row">
+
+        <div class="row">
             <div class="col-md-12">
                 <!-- The time line -->
                 <ul class="timeline">
@@ -344,5 +363,5 @@
             </div>
             <!-- /.col -->
         </div>
-	</div>
+    </div>
 @endsection
