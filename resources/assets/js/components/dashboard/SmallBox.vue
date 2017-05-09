@@ -29,6 +29,10 @@
             name: {
               type: String,
               required: true
+            },
+            color: {
+              type: String,
+              default: 'bg-aqua'
             }
           },
         mounted() {
