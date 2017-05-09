@@ -12,7 +12,7 @@
             <div class="timeline-item">
                 <span class="time"><i class="fa fa-clock-o"></i> {{ activity.updated_at }}</span>
 
-                <h3 class="timeline-header">{{ title }}</h3>
+                <h3 class="timeline-header">{{ getTitle(activity.type }}</h3>
 
                 <div class="timeline-body">
                     TODO DESCRIPTION {{ activity.type }}
@@ -39,6 +39,16 @@
           this.fetchActivityFeed()
         },
         methods: {
+        getTitle: function (type) {
+            switch(type) {
+              case 'created_task':
+                return 'Tasca creada'
+              case 'created_thread':
+                return 'Thread creat'
+              default:
+                return 'Característica creat'
+            }
+          },
             fetchActivityFeed () {
               console.log('fetchActivityFeedg executed!')
               var component = this
