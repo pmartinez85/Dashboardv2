@@ -51,7 +51,9 @@ Vue.component('reset-password-form', require('./components/auth/ResetPasswordFor
 
 Vue.component('dashboard-small-box', require('./components/dashboard/SmallBox.vue'))
 Vue.component('dashboard-increase-button', require('./components/dashboard/IncreaseButton.vue'))
+Vue.component('activity-feed', require('./components/dashboard/ActivityFeed.vue'))
 Vue.component('graph', require('./components/Graph.vue'))
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

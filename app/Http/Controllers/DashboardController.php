@@ -49,6 +49,6 @@ class DashboardController extends Controller
     }
     public function fetchActivityFeed()
     {
-        return Activity::all();
+        return Activity::orderbyDesc('update_task').get();
     }
 }

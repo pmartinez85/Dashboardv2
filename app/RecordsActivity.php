@@ -26,7 +26,7 @@ trait RecordsActivity
      */
     protected static function getActivitiesToRecord()
     {
-        return ['created'];
+        return ['created', 'updated', 'deleted'];
     }
 
     /**
