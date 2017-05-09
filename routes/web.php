@@ -19,6 +19,12 @@ Route::group(['middleware' => 'auth'], function () {
 //    });
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
+
+    Route::get('dashboard', function ()    {
+        $data = [];
+        return view('dashboard',$data);
+    })->name('dashboard');
+
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('tasks', 'DashboardController@tasks')->name('tasks');
     Route::get('dashboard/tasks/number', 'DashboardController@tasksNumber');
