@@ -17,7 +17,7 @@ class BroadcastServiceProvider extends ServiceProvider
     public function boot()
     {
         Broadcast::routes();
-        User::observe(UserObserver::class);
+        //User::observe(UserObserver::class);
 
         require base_path('routes/channels.php');
     }
